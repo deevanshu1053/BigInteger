@@ -281,7 +281,8 @@ struct BigInteger div1(struct BigInteger big1,struct BigInteger big2){
     if(big1.sign!=big2.sign){
         flag=-1;
     }
-    big1.sign=big2.sign=1;
+    big1.sign=1;
+    big2.sign=1;
     if(compare(big2,temp)==-1){
         big1.sign=flag;
         return big1;
@@ -298,7 +299,6 @@ struct BigInteger div1(struct BigInteger big1,struct BigInteger big2){
         return temp;
     }
     ans=big1;
-    int cnt;
     while(compare(ans,big2)!=1){
         ans=sub(ans,big2);
         res=add(res,temp);
